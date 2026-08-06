@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Nurkalam & Nurmila</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #FDFBF7; color: #5A4A3A; overflow-x: hidden; }
+    
+    /* BUNGA JATUH */
+    .petal {
+      position: fixed; top: -10%; color: #EADDCB; font-size: 20px;
+      animation: fall 10s linear infinite; z-index: 1; pointer-events: none;
+    }
+    @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+
+    .box-floral { border: 1px solid #D4AF37; border-radius: 20px; background: #fff; padding: 30px 20px; margin: 20px 0; box-shadow: 0 5px 20px rgba(212,175,55,0.1); position: relative; z-index: 2; }
+    .box-floral::before { content:"🌸"; position:absolute; top:-15px; left:20px; font-size:25px; background:#fff; padding:0 10px; }
+
+    #cover {
+      height: 100vh; width: 100%;
+      background: linear-gradient(rgba(253,251,247,0.9), rgba(253,251,247,0.9)), url('foto/cover.jpg') center/cover;
+      display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #5A4A3A;
+      position: fixed; top: 0; left: 0; z-index: 999;
+    }
+    #cover .tamu { padding: 10px 25px; margin: 15px 0; font-size: 16px; border: 1px solid #D4AF37; border-radius: 30px; background:#fff; }
+    #cover h1 { font-family: 'Great Vibes', cursive; font-size: 60px; color: #D4AF37; margin: 10px 0; }
+    #cover .ornamen { font-size: 30px; color: #D4AF37; }
+    #cover button { margin-top: 20px; padding: 14px 40px; border: none; background: #D4AF37; color: #fff; border-radius: 30px; font-family: 'Playfair Display'; font-size: 16px; cursor: pointer; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(212,175,55,0.4); }
+
+    #isi { display: none; }
+    .section { padding: 70px 20px; text-align: center; max-width: 700px; margin: auto; position: relative; z-index: 2; }
+    .judul { font-family: 'Playfair Display'; font-size: 32px; margin-bottom: 25px; color: #8A7A65; }
+    .nama { font-family: 'Great Vibes', cursive; font-size: 55px; color: #D4AF37; margin: 20px 0; }
+    .arab { font-family: 'Amiri', serif; font-size: 24px; direction: rtl; line-height: 2; color: #5A4A3A; }
+    .arab-besar { font-size: 32px; }
+    .arti { font-style: italic; font-size: 14px; margin-top: 10px; color: #8A7A65; }
+    .mempelai-box h3 { font-family: 'Playfair Display'; font-size: 24px; color: #D4AF37; }
+    .mempelai-box p { color: #5A4A3A; margin: 5px 0; }
+    .countdown { display: flex; justify-content: center; gap: 15px; margin: 30px 0; flex-wrap: wrap; }
+    .countdown div { padding: 15px 10px; min-width: 80px; background:#fff; border:1px solid #EADDCB; border-radius:10px; }
+    .countdown span { font-family: 'Playfair Display'; font-size: 32px; font-weight: 700; display: block; color:#D4AF37; }
+    .qris-img { width: 200px; height: 200px; border: 1px solid #EADDCB; border-radius: 10px; margin: 15px auto; }
+    .rekening { text-align: left; padding: 15px; }
+    .rekening h4 { color: #8A7A65; margin-bottom: 5px; }
+    .copy-btn { background: #8A7A65; color: #fff; border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer; font-size: 12px; margin-left: 10px; }
+    .galeri { display: grid; grid-template-columns: 1fr; gap: 15px; }
+    .galeri img { width: 100%; border-radius: 15px; border: 1px solid #EADDCB; aspect-ratio: 4/5; object-fit: cover; }
+    iframe { width: 100%; height: 300px; border: 1px solid #EADDCB; border-radius: 15px; margin: 20px 0; }
+    #musicBtn { position: fixed; bottom: 20px; right: 20px; background: #D4AF37; color: #fff; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 20px; cursor: pointer; z-index: 100; box-shadow: 0 3px 10px rgba(0,0,0,0.1);}
+    .pembatas { font-size: 30px; color: #D4AF37; margin: 20px 0; }
+    
+    /* FORM RSVP BARU */
+    .form-rsvp input, .form-rsvp select, .form-rsvp textarea { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #EADDCB; border-radius: 10px; font-family: 'Poppins'; background: #FDFBF7; }
+    .form-rsvp button { width: 100%; padding: 14px; margin-top: 10px; background: #D4AF37; color: #fff; border: none; border-radius: 30px; font-family: 'Playfair Display'; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <!-- BUNGA JATUH -->
+  <div class="petal" style="left:10%; animation-delay:0s;">🌸</div>
+  <div class="petal" style="left:30%; animation-delay:2s; font-size:15px;">🌼</div>
+  <div class="petal" style="left:50%; animation-delay:4s;">🌸</div>
+  <div class="petal" style="left:70%; animation-delay:1s; font-size:18px;">🌼</div>
+  <div class="petal" style="left:90%; animation-delay:3s;">🌸</div>
+
+  <div id="cover">
+    <p>Kepada Yth Bapak/Ibu/Saudara/i</p>
+    <div class="tamu" id="namaTamu">Tamu Undangan</div>
+    <div class="ornamen">❦</div>
+    <h1>Nur Kalam</h1>
+    <h1>&</h1>
+    <h1>Nur Mila</h1>
+    <p style="letter-spacing: 3px;">20 . 9 . 2026</p>
+    <div class="ornamen">❦</div>
+    <button onclick="bukaUndangan()">BUKA UNDANGAN</button>
+  </div>
+
+  <div id="isi">
+    <div class="section"><div class="box-floral"><p style="margin: 15px 0; font-size:18px;">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+    <p style="color:#8A7A65;">Dengan memohon rahmat dan ridho Allah SWT</p></div></div>
+    <div class="section"><div class="box-floral"><p class="arab arab-besar">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p><p class="arti">"Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang"</p></div></div>
+    <div class="section"><div class="box-floral"><p class="arab">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p><p class="arti">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang."</p><p class="arti" style="margin-top:10px;"><b>- QS. Ar-Rum: 21</b></p></div></div>
+    <div class="section"><h2 class="judul">UNDANGAN PERNIKAHAN</h2><div class="nama">Nurkalam <br> & <br> Nurmila </div></div>
+
+    <div class="section">
+      <div class="box-floral mempelai-box">
+        <h3>Nurkalam</h3>
+        <p>Putra Pertama dari</p>
+        <p><b>Bapak Jakaria</b> & <b>Ibu Jaisah</b></p>
+      </div>
+      <div class="pembatas">❦</div>
+      <div class="box-floral mempelai-box">
+        <h3>Nur Mila</h3>
+        <p>Putri Pertama dari</p>
+        <p><b>Bapak Astari</b> & <b>Ibu Sukanah</b></p>
+      </div>
+    </div>
+
+    <div class="section"><div class="box-floral"><p class="arab">النِّكَاحُ سُنَّتِي فَمَنْ رَغِبَ عَنْ سُنَّتِي فَلَيْسَ مِنِّي</p><p class="arti">"Pernikahan adalah sunnahku. Barangsiapa yang tidak suka dengan sunnahku, maka ia tidak termasuk golonganku."</p><p class="arti" style="margin-top:10px;"><b>- HR. Ibnu Majah</b></p></div></div>
+    
+    <div class="section"><h2 class="judul">MENUNJU HARI BAHAGIA</h2><div class="countdown"><div><span id="hari">00</span>Hari</div><div><span id="jam">00</span>Jam</div><div><span id="menit">00</span>Menit</div><div><span id="detik">00</span>Detik</div></div></div>
+
+    <div class="section">
+      <h2 class="judul">WAKTU & TEMPAT</h2>
+      <div class="box-floral">
+        <h3 style="font-family:'Playfair Display';">AKAD & RESEPSI</h3>
+        <p>Minggu, 20 September 2026<br>08:00 WIB<br>Kediaman Mempelai Wanita, Cikuya</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.2000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTInMDAuMCJTIDEwNsKwNDknMTAuMCJF!5e0!3m2!1sid!2sid!4v1600000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+        <a href="https://maps.google.com" target="_blank" style="display:inline-block; margin-top:15px; padding:10px 25px; background:#D4AF37; color:#fff; border-radius:30px; text-decoration:none; font-weight:500;">BUKA DI GOOGLE MAPS</a>
+      </div>
+    </div>
+
+    <div class="section"><h2 class="judul">MOMEN KAMI</h2><div class="galeri"><img src="foto/1.jpg" alt=""><img src="foto/2.jpg" alt=""><img src="foto/3.jpg" alt=""><img src="foto/4.jpg" alt=""><img src="foto/5.jpg" alt=""></div></div>
+
+    <!-- FORM KONFIRMASI KEHADIRAN BARU -->
+    <div class="section">
+      <h2 class="judul">KONFIRMASI KEHADIRAN</h2>
+      <div class="box-floral">
+        <p style="margin-bottom:15px;">Mohon konfirmasi kehadiran anda</p>
+        <form class="form-rsvp" onsubmit="kirimRSVP(event)">
+          <input type="text" id="namaRSVP" placeholder="Nama Anda" required>
+          <select id="kehadiran" required>
+            <option value="">Konfirmasi Kehadiran</option>
+            <option value="Hadir">Hadir</option>
+            <option value="Tidak Hadir">Tidak Hadir</option>
+          </select>
+          <input type="number" id="jumlah" placeholder="Jumlah Tamu" min="1">
+          <textarea id="ucapan" rows="3" placeholder="Berikan Ucapan & Doa"></textarea>
+          <button type="submit">KIRIM KONFIRMASI</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="section"><h2 class="judul">TANDA KASIH</h2><div class="box-floral"><h3 style="font-family:'Playfair Display';">SCAN QRIS</h3><img src="qris.png" class="qris-img" alt="QRIS"><p>a.n Nurkalam & Nurmila</p></div><div class="box-floral"><h3 style="font-family:'Playfair Display';">TRANSFER BANK</h3><div class="rekening"><h4>Calon Pengantin Wanita</h4><p>BCA <span id="rekCpw">1234567890</span> <button class="copy-btn" onclick="copyRek('rekCpw')">SALIN</button><br>A. N Nurmila</p></div><div class="rekening"><h4>Calon Pengantin Pria</h4><p>Mandiri <span id="rekCpp">0987654321</span> <button class="copy-btn" onclick="copyRek('rekCpp')">SALIN</button><br>A.N Nurkalam</p></div></div></div>
+
+    <div class="section"><div class="box-floral"><p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p><p style="margin-top:20px;">Kami yang berbahagia, <br><b>Keluarga Besar Nur Kalam & Nur Mila</b></p></div></div>
+  </div>
+
+  <audio id="lagu" loop><source src="musik.mp3" type="audio/mpeg"></audio>
+  <button id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nama = urlParams.get('to');
+    if(nama){ document.getElementById('namaTamu').innerText = nama.replace(/_/g, ' '); } // INI YG DIBENERIN
+    
+    function bukaUndangan(){ document.getElementById('cover').style.display = 'none'; document.getElementById('isi').style.display = 'block'; document.getElementById('lagu').play().catch(()=>{}); window.scrollTo(0,0); }
+    function copyRek(id){ const teks = document.getElementById(id).innerText; navigator.clipboard.writeText(teks); alert('Nomor Rekening ' + teks + ' berhasil disalin!'); }
+    
+    // FUNGSI RSVP BARU
+    function kirimRSVP(e){
+      e.preventDefault();
+      const nama = document.getElementById('namaRSVP').value;
+      const hadir = document.getElementById('kehadiran').value;
+      alert(`Terima kasih ${nama}!\nKonfirmasi: ${hadir}\nUcapan anda sudah kami terima ❤️`);
+      document.querySelector('.form-rsvp').reset();
+    }
+
+    const tanggalH = new Date("Sep 20, 2026 08:00:00").getTime();
+    setInterval(() => { const jarak = tanggalH - new Date().getTime(); if(jarak > 0){document.getElementById('hari').innerText = String(Math.floor(jarak / (1000 * 60 * 60 * 24))).padStart(2, '0'); document.getElementById('jam').innerText = String(Math.floor((jarak % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0'); document.getElementById('menit').innerText = String(Math.floor((jarak % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0'); document.getElementById('detik').innerText = String(Math.floor((jarak % (1000 * 60)) / 1000)).padStart(2, '0'); } }, 1000);
+    let play = true;
+    function toggleMusic(){ const lagu = document.getElementById('lagu'); if(play){ lagu.pause(); play = false; document.getElementById('musicBtn').innerText = '🔇'; } else { lagu.play(); play = true; document.getElementById('musicBtn').innerText = '🎵'; } }
+  </script>
+</body>
+</html>
