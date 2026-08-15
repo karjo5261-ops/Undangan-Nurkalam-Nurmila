@@ -118,7 +118,8 @@
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const nama = urlParams.get('to');
-    if(nama){ document.getElementById('namaTamu').innerText = nama.replace(/_/g, '); }
+    if(nama){ document.getElementById('namaTamu').innerText = nama.replace(/_/g, ' '); } // UDAH DIBENERIN
+    
     function bukaUndangan(){ document.getElementById('cover').style.display = 'none'; document.getElementById('isi').style.display = 'block'; document.getElementById('lagu').play().catch(()=>{}); window.scrollTo(0,0); }
     function copyRek(id){ const teks = document.getElementById(id).innerText; navigator.clipboard.writeText(teks); alert('Nomor Rekening ' + teks + ' berhasil disalin!'); }
     function kirimRSVP(e){ e.preventDefault(); const nama = document.getElementById('namaRSVP').value; const hadir = document.getElementById('kehadiran').value; alert(`Terima kasih ${nama}!\nKonfirmasi: ${hadir}\nUcapan anda sudah kami terima ❤️`); document.querySelector('.form-rsvp').reset(); }
